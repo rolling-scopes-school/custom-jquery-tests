@@ -128,7 +128,7 @@ describe '#addClass', ->
 				child.classList.contains 'foo'
 					.should.eql yes
 
-				if index mod 2 isnt 0
+				if index % 2 isnt 0
 					child.classList.contains 'bar'
 						.should.eql yes
 
