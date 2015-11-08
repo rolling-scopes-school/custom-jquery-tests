@@ -366,7 +366,7 @@ describe '#on', ->
 			callback.should.have.been.calledWith event
 
 	describe "$('.wrapper').on('click', '.child', callback)", ->
-		it 'should support event delegation', ->
+		it 'should delegate event to child which matches to selector', ->
 
 			callback = do sinon.spy
 			$wrapper.on 'click', '.child', callback
@@ -381,6 +381,21 @@ describe '#on', ->
 			child.dispatchEvent event
 
 			callback.should.have.been.called
+
+	describe "$('.wrapper').on('click', '.child', callback)", ->
+	it 'should not delegate event to child which does not match to selector', ->
+
+		callback = do sinon.spy
+		$wrapper.on 'click', '.child', callback
+
+		child = document.createElement 'div'
+		wrapper.appendChild child
+
+		event = document.createEvent 'HTMLEvents'
+		event.initEvent 'click', yes, yes
+		child.dispatchEvent event
+
+		callback.should.not.have.been.called
 
 describe '#one', ->
 	describe "$('.wrapper').one('click', handler)", ->
