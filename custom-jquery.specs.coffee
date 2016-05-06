@@ -365,6 +365,19 @@ describe '#on', ->
 
 			callback.should.have.been.calledWith event
 
+	describe "$('.child').on('click', callback)", ->
+		it 'should add event listener to each of children', ->
+			callback = do sinon.spy
+
+			$('.child').on('click', callback)
+
+			for child in children
+				event = document.createEvent 'HTMLEvents'
+				event.initEvent 'click'
+				child.dispatchEvent event
+
+			callback.should.have.been.callCount(children.length)
+
 	describe "$('.wrapper').on('click', '.child', callback)", ->
 		it 'should delegate event to child which matches to selector', ->
 
