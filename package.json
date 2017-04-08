@@ -4,7 +4,7 @@
   "description": "Test your custom jquery implementation without clicking and crying!",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register custom-jquery.specs.coffee --reporter spec"
+    "test": "mocha --compilers coffee:coffee-script/register custom-jquery.specs.coffee --reporter score-reporter"
   },
   "author": "Andrei Volchenko <volchenko.andrei@gmail.com>",
   "license": "MIT",

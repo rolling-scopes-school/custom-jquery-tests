@@ -1,0 +1,17 @@
+{
+  "JQuery": {
+    "weight": 100,
+    "suitesWeights": {
+      "#addClass": 10,
+      "#append": 10,
+      "#html": 10,
+      "#attr": 10,
+      "#children": 10,
+      "#css": 10,
+      "#data": 10,
+      "#on": 10,
+      "#one": 10,
+      "#each": 10
+    }
+  }
+}
