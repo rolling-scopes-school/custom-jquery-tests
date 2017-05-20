@@ -1,5 +1,7 @@
-### Custom JQuery tests
-#### Install
+# Custom JQuery tests
+
+## Install
+* install node.js v6.x.x
 ```sh
 git clone https://github.com/rolling-scopes-school/custom-jquery-tests.git
 cd custom-jquery-tests
@@ -10,7 +12,7 @@ npm i
 * add path to your folder
 * make sure you provided `window.$` reference to your implementation of JQuery
 
-#### Run
+## Run
 ```sh
 npm test
 ```
